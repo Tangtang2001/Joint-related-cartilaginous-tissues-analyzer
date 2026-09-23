@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chondrocyte-hybrid-clustering"
+version = "1.0.0"
+description = "Two-stage hybrid clustering analysis used for chondrocyte spatial clusters"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0,<3",
+    "opencv-python>=4.8,<5",
+    "scikit-learn>=1.4,<2",
+    "scipy>=1.11,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+chondrocyte-hybrid-clustering = "chondrocyte_hybrid_clustering.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
